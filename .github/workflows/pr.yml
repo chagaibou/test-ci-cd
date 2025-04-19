@@ -1,0 +1,23 @@
+name : PR
+
+on:
+  pull_request:
+   branch: ["main"]
+
+jobs:
+  build:
+   runs-on: ubuntu-latest
+   steps:
+     - name: Checkout
+       uses: actions/checkout@v4
+     - name: Setup python
+       uses: actions/setup-python@v3
+       with: 
+        python-version: 3.9     
+     - name: Run Python script        
+       run: |          
+        echo hello_world.py           
+        python hello_world.py
+
+   
+
